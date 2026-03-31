@@ -1,56 +1,84 @@
-Git and GitHub 
+Git and GitHub Cheat Sheet
+A concise guide to essential Git commands and workflows for version control. 
 
-*git init - setup git in folder
+1. Initial Setup and Configuration
+Configure your identity and customize your workflow with aliases.
 
-*git status - changes after previous version 
 
-*git add filename.extension / folder - specific file to make changes
+Initialize Git: git init — Sets up Git in the current folder. 
 
-*git add . - everything in the folder
 
-*git commit -m  "___" - add msg to the commit
+Set Username: git config --global user.name "Your Name" 
 
-*git config --global user.name "Name" - set name explicitly
 
-*git config --global user.email "Email" - set email explicitly
+Set Email: git config --global user.email "your@email.com" 
 
-*git log - shows version history 
-(does not show unnamed branches)
 
-*git log --all - shows all previous versions
+Set Aliases: git config --global alias.<aliasName> "<command>" — Create shortcuts (e.g., git config --global alias.cm "commit -m"). 
 
-*git log --all --graph - shows branching effect of git 
-(useful when we go to specific version of commit and update it)
+2. Staging and Committing
+Manage changes and save versions of your progress.
 
-*q - closes git log
 
-*git add . 
- git commit -m "___" --amend - amends changes in the previous commit and doesn't make a new commit
+Check Status: git status — View changes made since the last version. 
 
-*git reset filename.extension / foldername - to undo git add filename.extension / folder
 
-*git reset . - undo git add .
+Stage Specific File: git add <filename> 
 
-*git checkout -- filename.extension / folder - discard changes in that file / folder
 
-*git checkout -- . - discards changes overall
+Stage Everything: git add . 
 
-*git checkout <commitHash> - to go back to previous version of the code 
-(commitHash is generated after we create a commit. git log shows versions only uptil previous version where we headed)
 
-*git checkout <branchName> - to go to specific branch 
-(used instead of commitHash) 
+Commit with Message: git commit -m "your message" 
 
-*git config --global alias.<aliasName> "<aliasStandsFor>" 
-(used to set alias / shortcut for any command
-eg. git config --global alias.cm "commit -M"
-git cm "___" will easily run)
 
-*.gitignore - to ignore files listed in it
+Amend Last Commit: git commit --amend -m "new message" — Updates the previous commit instead of creating a new one. 
 
-*rm -rf .git - removes git from the git initialised folder
 
-VS Code - 
+Ignore Files: Use a .gitignore file to list files or folders Git should ignore. 
 
-*Staging area - git add . - tracks changes and not files
-*Chnages - shows changes in the file
+3. Viewing History
+Navigate through your project's timeline.
+
+
+Basic Log: git log — Shows version history (excluding unnamed branches). 
+
+
+Full History: git log --all — Shows every previous version. 
+
+
+Visual History: git log --all --graph — Displays the branching structure visually. 
+
+
+Exit Log: Press q to close the log view. 
+
+4. Undoing and Reverting
+Correct mistakes by resetting or discarding changes.
+
+
+Unstage Specific File: git reset <filename> — Reverses git add. 
+
+
+Unstage All: git reset . 
+
+
+Discard Changes (File): git checkout -- <filename> — Reverts a file to its last committed state. 
+
+
+Discard All Changes: git checkout -- . 
+
+
+Switch to Version: git checkout <commitHash> — Move the HEAD to a specific previous version. 
+
+
+Switch Branch: git checkout <branchName> 
+
+
+Remove Git: rm -rf .git — Completely removes Git tracking from the folder. 
+
+5. IDE Integration (VS Code)
+
+Staging Area: Represents git add .; it tracks specific changes rather than just files. 
+
+
+Changes View: Displays the specific modifications within your files.
